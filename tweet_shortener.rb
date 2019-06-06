@@ -15,13 +15,13 @@ def dictionary
 end
 
 def word_substituter(tweet)
-  tweet.split(" ")
-  tweet.each_with_index do |word, index|
+  tweet_array = tweet.split(" ")
+  tweet_array.each_with_index do |word, index|
     dictionary.keys.each do |key|
       if key == word
-        tweet[index] = dictionary[key]
+        tweet_array[index] = dictionary[key]
       end
     end
   end
-  tweet.join(" ")
+  tweet_array.join(" ")
 end
